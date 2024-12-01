@@ -2,7 +2,7 @@ import Data.List (sort)
 
 main :: IO ()
 main = do
-  input <- readFile "day1_input.txt"
+  input <- readFile "inputs/day1.txt"
 
   let inputNumbers = map (map read . words) (lines input) :: [[Int]]
   let xs = map head inputNumbers
