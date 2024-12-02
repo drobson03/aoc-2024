@@ -20,9 +20,9 @@ main = do
   let reports = map (map read . words) (lines input) :: [[Int]]
 
   -- part 1
-  print $ length $ filter (== True) $ map (isSafe . toPairs) reports
+  print $ length . filter isSafe $ map toPairs reports
 
   -- part 2
-  print $ length $ filter (== True) $ map (any (isSafe . toPairs) . createPermutations) reports
+  print $ length . filter (any isSafe) $ map (map toPairs . createPermutations) reports
 
   return ()
